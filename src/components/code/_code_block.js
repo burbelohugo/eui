@@ -111,6 +111,7 @@ export class EuiCodeBlockImpl extends Component {
       paddingSize,
       transparentBackground,
       isCopyable,
+      noLineWrap,
       ...otherProps
     } = this.props;
 
@@ -132,6 +133,10 @@ export class EuiCodeBlockImpl extends Component {
 
     if (overflowHeight) {
       optionalStyles.maxHeight = overflowHeight;
+    }
+
+    if (noLineWrap) {
+      optionalStyles.whiteSpace = 'pre';
     }
 
     const codeSnippet = (
@@ -322,6 +327,11 @@ EuiCodeBlockImpl.propTypes = {
    * Displays an icon button to copy the code snippet to the clipboard.
    */
   isCopyable: PropTypes.bool,
+
+  /**
+   * Removes the default line wrapping in the code snippet, so that extra-long lines overflow and are scrollable.
+   */
+  noLineWrap: PropTypes.bool,
 };
 
 EuiCodeBlockImpl.defaultProps = {
@@ -329,4 +339,5 @@ EuiCodeBlockImpl.defaultProps = {
   paddingSize: 'l',
   fontSize: 's',
   isCopyable: false,
+  noLineWrap: false,
 };

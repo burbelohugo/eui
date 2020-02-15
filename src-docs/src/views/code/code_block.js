@@ -4,7 +4,7 @@ import { EuiCodeBlock, EuiSpacer } from '../../../../src/components';
 
 const htmlCode = `<!--I'm an example of HTML-->
 <div>
-  <h1>Title</h1>
+  <h1>Title sdfjdsafaldfjkassjakfdksa fsjd kfjaksdlj flksjdfklsjadklfjakjfklajsdklfjklsdjfklajsdklfjaksdjfkljskf sds fsdfds Title sdfjdsafaldfjkassjakfdksa fsjd kfjaksdlj flksjdfklsjadklfjakjfklajsdklfjklsdjfklajsdklfjaksdjfkljskf sds fsdfds Title sdfjdsafaldfjkassjakfdksa fsjd kfjaksdlj flksjdfklsjadklfjakjfklajsdklfjklsdjfklajsdklfjaksdjfkljskf sds fsdfds</h1>
 </div>
 `;
 
@@ -12,7 +12,9 @@ const jsCode = require('!!raw-loader!./code_block');
 
 export default () => (
   <div>
-    <EuiCodeBlock language="html">{htmlCode}</EuiCodeBlock>
+    <EuiCodeBlock language="html" noLineWrap={false}>
+      {htmlCode}
+    </EuiCodeBlock>
 
     <EuiSpacer />
 
